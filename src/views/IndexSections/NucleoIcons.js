@@ -32,18 +32,13 @@ export default function NucleoIcons() {
 					<Col lg="8" md="12">
 						<h2 className="title">Decentralized World</h2>
 						<h4 className="description">
-							DApp• Start to take over the web. Dive deeper into decentralized
-							world and connect you crypto wallet to the site to start exploring
+							DApps start to take over the web. Dive deeper into decentralized
+							world and connect your crypto wallet to the site to start
+							exploring and interacting with the page
 						</h4>
 						<div className="btn-wrapper">
-							<Button
-								className="btn-round"
-								color="primary"
-								href="https://demos.creative-tim.com/blk-design-system-react/#/documentation/icons"
-								rel="noopener noreferrer"
-								target="_blank"
-							>
-								Connect you wallet
+							<Button className="btn-round" color="primary">
+								Connect to a wallet
 							</Button>
 							{/* <Button
 								className="btn-simple btn-round"

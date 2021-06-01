@@ -16,8 +16,6 @@
 
 */
 import React from 'react';
-// react plugin used to create charts
-import { Line } from 'react-chartjs-2';
 // reactstrap components
 import {
 	Button,
@@ -32,14 +30,13 @@ import {
 	Row,
 	Col,
 } from 'reactstrap';
-
-// core components
-import ExamplesNavbar from 'components/Navbars/ExamplesNavbar.js';
 import Footer from 'components/Footer/Footer.js';
 
-import bigChartData from 'variables/charts.js';
+import IndexNavbar from 'components/Navbars/IndexNavbar';
+const { create } = require('ipfs-http-client');
 
 export default function VotePage() {
+	var ipfs = create({ host: 'localhost', port: '5001', protocol: 'http' });
 	React.useEffect(() => {
 		document.body.classList.toggle('landing-page');
 		// Specify how to clean up after this effect:
@@ -49,7 +46,7 @@ export default function VotePage() {
 	}, []);
 	return (
 		<>
-			<ExamplesNavbar />
+			<IndexNavbar />
 			<div className="wrapper">
 				<div className="page-header">
 					<img
@@ -90,14 +87,12 @@ export default function VotePage() {
 									<span className="text-white">secured</span>
 								</h1>
 								<p className="text-white mb-3">
-									A wonderful serenity has taken possession of my entire soul,
-									like these sweet mornings of spring which I enjoy with my
-									whole heart. I am alone, and fee cv c c c zsrfdff 5ty6rf fg
-									f3rf ghneyyyyyyyyyyyyyyyyyyyyyyyyy...
+									Make sure Your vote will never dissaper nor it will change, or
+									even gets deleted. Most importantly no vote can be fake.
 								</p>
 								<div className="btn-wrapper mb-3">
 									<p className="category text-success d-inline">
-										From 9.99%/mo
+										Choose your candidate right now
 									</p>
 									<Button
 										className="btn-link"
@@ -109,46 +104,18 @@ export default function VotePage() {
 										<i className="tim-icons icon-minimal-right" />
 									</Button>
 								</div>
-								<div className="btn-wrapper">
-									<div className="button-container">
-										<Button
-											className="btn-icon btn-simple btn-round btn-neutral"
-											color="default"
-											href="#pablo"
-											onClick={(e) => e.preventDefault()}
-										>
-											<i className="fab fa-twitter" />
-										</Button>
-										<Button
-											className="btn-icon btn-simple btn-round btn-neutral"
-											color="default"
-											href="#pablo"
-											onClick={(e) => e.preventDefault()}
-										>
-											<i className="fab fa-dribbble" />
-										</Button>
-										<Button
-											className="btn-icon btn-simple btn-round btn-neutral"
-											color="default"
-											href="#pablo"
-											onClick={(e) => e.preventDefault()}
-										>
-											<i className="fab fa-facebook" />
-										</Button>
-									</div>
-								</div>
 							</Col>
 							<Col lg="4" md="5">
 								<img
 									alt="..."
 									className="img-fluid"
-									src={require('assets/img/etherum.png').default}
+									src={require('assets/svg/vote.svg').default}
 								/>
 							</Col>
 						</Row>
 					</div>
 				</div>
-				<section className="section section-lg">
+				{/* <section className="section section-lg">
 					<section className="section">
 						<img
 							alt="..."
@@ -468,7 +435,7 @@ export default function VotePage() {
 							</CardBody>
 						</Card>
 					</Col>
-				</section>
+				</section> */}
 				<section className="section section-lg section-coins">
 					<img
 						alt="..."

@@ -95,44 +95,45 @@
     overflow: hidden;
 
     .square {
-      background-size: cover;
+    //   background-size: cover;
     }
     .square-1 {
-      height: 300px;
-      width: 300px;
-      background-image: url($asset-base-path + "/img/github.svg");
+      height: 200px;
+      width: 200px;
+      background-image: url($asset-base-path + "/svg/neptune.svg") !important;
       top: 80px;
       left: 100px;
       opacity: 0.3;
       animation-duration: 5s;
+      background-size: cover !important;
+
     }
 
     .square-2{
-      height: 200px;
-      width: 200px;
-      background: url($asset-base-path + "/img/square3.png");
-      background-size: cover;
+      height: 100px;
+      width: 100px;
+      background: url($asset-base-path + "/svg/moon.svg") !important;
+      background-size: cover !important;
       bottom: 40px;
       left: 600px;
-      opacity: 0.1;
       animation-duration: 8s;
     }
 
     .square-3{
       height: 100px;
       width: 100px;
-      background: url($asset-base-path + "/img/square2.png");
-      background-size: cover;
+      background: url($asset-base-path + "/svg/jupiter.svg") !important;
+      background-size: cover !important;
       top: 300px;
       left: 700px;
       animation-duration: 5s;
     }
 
     .square-4{
-      height: 250px;
-      width: 250px;
-      background: url($asset-base-path + "/img/square3.png");
-      background-size: cover;
+      height: 150px;
+      width: 150px;
+      background: url($asset-base-path + "/svg/saturn.svg") !important;
+      background-size: cover !important;
       top: 0px;
       right: 100px;
       opacity: 0.8;

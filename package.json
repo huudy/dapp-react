@@ -1,35 +1,15 @@
 {
-  "name": "blk-design-system-react",
+  "name": "dapp-react",
   "version": "1.2.0",
-  "description": "React version of BLK Design System by Creative Tim",
+  "description": "React DApp",
   "main": "index.js",
-  "author": "Creative Tim",
+  "author": "PaTre",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/creativetimofficial/blk-design-system-react.git"
-  },
-  "bugs": {
-    "url": "https://github.com/creativetimofficial/blk-design-system-react/issues"
-  },
-  "homepage": "https://demos.creative-tim.com/blk-design-system-react/#/",
   "keywords": [
     "react",
-    "reactjs",
-    "blk",
-    "blk-react",
-    "design",
-    "design-react",
-    "system",
-    "system-react",
-    "design-system",
-    "design-system-react",
-    "blk-design",
-    "blk-design-react",
-    "blk-system",
-    "blk-system-react",
-    "blk-design-system",
-    "blk-design-system-react"
+    "web3",
+    "dapp",
+    "ethereum"
   ],
   "dependencies": {
     "@testing-library/jest-dom": "5.11.6",
@@ -40,6 +20,7 @@
     "classnames": "2.2.6",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
+    "ipfs-http-client": "^50.1.0",
     "moment": "2.29.1",
     "node-sass": "4.14.1",
     "node-sass-package-importer": "5.3.2",

@@ -62,7 +62,7 @@ export default function Examples() {
 							to="profile-page"
 							tag={Link}
 						>
-							View Profile Page
+							View Upload to IPFS Page
 						</Button>
 					</Col>
 				</Row>
