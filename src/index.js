@@ -34,17 +34,23 @@ import LandingPage from 'views/examples/LandingPage.js';
 import RegisterPage from 'views/examples/RegisterPage.js';
 import ProfilePage from 'views/examples/ProfilePage.js';
 import VotePage from 'views/examples/VotePage';
+import ScrollToTop from 'react-router-scroll-top';
 
 ReactDOM.render(
 	<HashRouter>
-		<Switch>
-			<Route path="/main" render={(props) => <Index {...props} />} />
-			<Route path="/landing" render={(props) => <LandingPage {...props} />} />
-			<Route path="/register" render={(props) => <RegisterPage {...props} />} />
-			<Route path="/profile" render={(props) => <ProfilePage {...props} />} />
-			<Route path="/vote" render={(props) => <VotePage {...props} />} />
-			<Redirect from="/" to="/main" />
-		</Switch>
+		<ScrollToTop>
+			<Switch>
+				<Route path="/main" render={(props) => <Index {...props} />} />
+				<Route path="/landing" render={(props) => <LandingPage {...props} />} />
+				<Route
+					path="/register"
+					render={(props) => <RegisterPage {...props} />}
+				/>
+				<Route path="/profile" render={(props) => <ProfilePage {...props} />} />
+				<Route path="/vote" render={(props) => <VotePage {...props} />} />
+				<Redirect from="/" to="/main" />
+			</Switch>
+		</ScrollToTop>
 	</HashRouter>,
 	document.getElementById('root')
 );

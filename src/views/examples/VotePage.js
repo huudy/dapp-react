@@ -33,10 +33,10 @@ import {
 import Footer from 'components/Footer/Footer.js';
 
 import IndexNavbar from 'components/Navbars/IndexNavbar';
-const { create } = require('ipfs-http-client');
+// const { create } = require('ipfs-http-client');
 
 export default function VotePage() {
-	var ipfs = create({ host: 'localhost', port: '5001', protocol: 'http' });
+	// var ipfs = create({ host: 'localhost', port: '5001', protocol: 'http' });
 	React.useEffect(() => {
 		document.body.classList.toggle('landing-page');
 		// Specify how to clean up after this effect:
@@ -108,8 +108,8 @@ export default function VotePage() {
 							<Col lg="4" md="5">
 								<img
 									alt="..."
-									className="img-fluid"
-									src={require('assets/svg/vote.svg').default}
+									// className="img-fluid"
+									src={require('assets/img/bitcoin.png').default}
 								/>
 							</Col>
 						</Row>
