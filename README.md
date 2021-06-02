@@ -14,3 +14,4 @@ Blk• Design  System React will help you create a clean and simple website that
 ### Just getting started with Ethereum
 
 - Trying my skills in smart contracts to add hardhat environment so my little app can connect to blockchain 'npx hardhat'
+- 
