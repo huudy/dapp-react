@@ -32,11 +32,11 @@ export default function Examples() {
 			<Container className="text-center">
 				<Row>
 					<Col sm="6">
-						<Link to="landing-page">
+						<Link to="vote">
 							<img
 								alt="..."
 								className="img-raised"
-								src={require('assets/img/landing-page.png').default}
+								src={require('assets/img/vote-page.png').default}
 							/>
 						</Link>
 						<Button
@@ -49,7 +49,7 @@ export default function Examples() {
 						</Button>
 					</Col>
 					<Col sm="6">
-						<Link to="profile-page">
+						<Link to="upload">
 							<img
 								alt="..."
 								className="img-raised"
@@ -59,7 +59,7 @@ export default function Examples() {
 						<Button
 							className="btn-simple btn-round"
 							color="primary"
-							to="profile-page"
+							to="upload"
 							tag={Link}
 						>
 							View Upload to IPFS Page

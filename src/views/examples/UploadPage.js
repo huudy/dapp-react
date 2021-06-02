@@ -25,16 +25,20 @@ import {
 	CardFooter,
 	ListGroupItem,
 	ListGroup,
+	FormGroup,
+	Form,
+	Input,
 	Container,
 	Row,
 	Col,
+	UncontrolledTooltip,
 } from 'reactstrap';
 import Footer from 'components/Footer/Footer.js';
 
 import IndexNavbar from 'components/Navbars/IndexNavbar';
 // const { create } = require('ipfs-http-client');
 
-export default function VotePage() {
+export default function UploadPage() {
 	// var ipfs = create({ host: 'localhost', port: '5001', protocol: 'http' });
 	React.useEffect(() => {
 		document.body.classList.toggle('landing-page');
@@ -114,125 +118,105 @@ export default function VotePage() {
 						</Row>
 					</div>
 				</div>
-
-				<section id="candidates" className="section section-lg section-coins">
-					<img
-						alt="..."
-						className="path"
-						src={require('assets/img/path3.png').default}
-					/>
+				<section className="section">
 					<Container>
 						<Row>
-							<Col md="4">
-								<hr className="line-info" />
-								<h1>
-									Choose the <span className="text-info">candidate</span>
-								</h1>
-							</Col>
-						</Row>
-						<Row>
-							<Col md="4">
-								<Card className="card-coin card-plain">
+							<Col md="6">
+								<Card className="card-plain">
 									<CardHeader>
-										<img
-											alt="..."
-											className="img-fluid rounded-circle shadow-lg"
-											src={require('assets/img/mike.jpg').default}
-											style={{ width: '150px' }}
-										/>
+										<h1 className="profile-title text-left">Contact</h1>
+										<h5 className="text-on-back">03</h5>
 									</CardHeader>
 									<CardBody>
-										<Row>
-											<Col className="text-center" md="12">
-												<h4 className="text-uppercase">Light Coin</h4>
-												<span>Plan</span>
-												<hr className="line-primary" />
-											</Col>
-										</Row>
-										<Row>
-											<ListGroup>
-												<ListGroupItem>50 messages</ListGroupItem>
-												<ListGroupItem>100 emails</ListGroupItem>
-												<ListGroupItem>24/7 Support</ListGroupItem>
-											</ListGroup>
-										</Row>
+										<Form>
+											<Row>
+												<Col md="6">
+													<FormGroup>
+														<label>Your Name</label>
+														<Input defaultValue="Mike" type="text" />
+													</FormGroup>
+												</Col>
+												<Col md="6">
+													<FormGroup>
+														<label>Email address</label>
+														<Input placeholder="mike@email.com" type="email" />
+													</FormGroup>
+												</Col>
+											</Row>
+											<Row>
+												<Col md="6">
+													<FormGroup>
+														<label>Phone</label>
+														<Input defaultValue="001-12321345" type="text" />
+													</FormGroup>
+												</Col>
+												<Col md="6">
+													<FormGroup>
+														<label>Company</label>
+														<Input defaultValue="CreativeTim" type="text" />
+													</FormGroup>
+												</Col>
+											</Row>
+											<Row>
+												<Col md="12">
+													<FormGroup>
+														<label>Message</label>
+														<Input placeholder="Hello there!" type="text" />
+													</FormGroup>
+												</Col>
+											</Row>
+											<Button
+												className="btn-round float-right"
+												color="primary"
+												data-placement="right"
+												id="tooltip341148792"
+												type="button"
+											>
+												Send text
+											</Button>
+											<UncontrolledTooltip
+												delay={0}
+												placement="right"
+												target="tooltip341148792"
+											>
+												Can't wait for your message
+											</UncontrolledTooltip>
+										</Form>
 									</CardBody>
-									<CardFooter className="text-center">
-										<Button className="btn-simple" color="primary">
-											Get plan
-										</Button>
-									</CardFooter>
 								</Card>
 							</Col>
-							<Col md="4">
-								<Card className="card-coin card-plain">
-									<CardHeader>
-										<img
-											alt="..."
-											className="img-fluid rounded-circle shadow"
-											src={require('assets/img/james.jpg').default}
-											style={{ width: '150px' }}
-										/>
-									</CardHeader>
-									<CardBody>
-										<Row>
-											<Col className="text-center" md="12">
-												<h4 className="text-uppercase">Dark Coin</h4>
-												<span>Plan</span>
-												<hr className="line-success" />
-											</Col>
-										</Row>
-										<Row>
-											<ListGroup>
-												<ListGroupItem>150 messages</ListGroupItem>
-												<ListGroupItem>1000 emails</ListGroupItem>
-												<ListGroupItem>24/7 Support</ListGroupItem>
-											</ListGroup>
-										</Row>
-									</CardBody>
-									<CardFooter className="text-center">
-										<Button className="btn-simple" color="success">
-											Get plan
-										</Button>
-									</CardFooter>
-								</Card>
-							</Col>
-							<Col md="4">
-								<Card className="card-coin card-plain">
-									<CardHeader>
-										<img
-											alt="..."
-											className="img-fluid rounded shadow-lg"
-											src={require('assets/img/lora.jpg').default}
-											style={{ width: '150px' }}
-										/>
-									</CardHeader>
-									<CardBody>
-										<Row>
-											<Col className="text-center" md="12">
-												<h4 className="text-uppercase">Bright Coin</h4>
-												<span>Plan</span>
-												<hr className="line-info" />
-											</Col>
-										</Row>
-										<Row>
-											<ListGroup>
-												<ListGroupItem>350 messages</ListGroupItem>
-												<ListGroupItem>10K emails</ListGroupItem>
-												<ListGroupItem>24/7 Support</ListGroupItem>
-											</ListGroup>
-										</Row>
-									</CardBody>
-									<CardFooter className="text-center">
-										<Button className="btn-simple" color="info">
-											Get plan
-										</Button>
-									</CardFooter>
-								</Card>
+							<Col className="ml-auto" md="4">
+								<div className="info info-horizontal">
+									<div className="icon icon-primary">
+										<i className="tim-icons icon-square-pin" />
+									</div>
+									<div className="description">
+										<h4 className="info-title">Find us at the office</h4>
+										<p>
+											Bld Mihail Kogalniceanu, nr. 8, <br />
+											7652 Bucharest, <br />
+											Romania
+										</p>
+									</div>
+								</div>
+								<div className="info info-horizontal">
+									<div className="icon icon-primary">
+										<i className="tim-icons icon-mobile" />
+									</div>
+									<div className="description">
+										<h4 className="info-title">Give us a ring</h4>
+										<p>
+											Michael Jordan <br />
+											+40 762 321 762 <br />
+											Mon - Fri, 8:00-22:00
+										</p>
+									</div>
+								</div>
 							</Col>
 						</Row>
 					</Container>
 				</section>
+
 				<Footer />
 			</div>
 		</>

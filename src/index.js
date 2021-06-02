@@ -17,37 +17,24 @@
 */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-	HashRouter,
-	BrowserRouter,
-	Route,
-	Switch,
-	Redirect,
-} from 'react-router-dom';
+import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import 'assets/css/nucleo-icons.css';
 import 'assets/scss/blk-design-system-react.scss?v=1.2.0';
 import 'assets/demo/demo.css';
 
 import Index from 'views/Index.js';
-import LandingPage from 'views/examples/LandingPage.js';
-import RegisterPage from 'views/examples/RegisterPage.js';
-import ProfilePage from 'views/examples/ProfilePage.js';
 import VotePage from 'views/examples/VotePage';
 import ScrollToTop from 'react-router-scroll-top';
+import UploadPage from 'views/examples/UploadPage';
 
 ReactDOM.render(
 	<HashRouter>
 		<ScrollToTop>
 			<Switch>
 				<Route path="/main" render={(props) => <Index {...props} />} />
-				<Route path="/landing" render={(props) => <LandingPage {...props} />} />
-				<Route
-					path="/register"
-					render={(props) => <RegisterPage {...props} />}
-				/>
-				<Route path="/profile" render={(props) => <ProfilePage {...props} />} />
 				<Route path="/vote" render={(props) => <VotePage {...props} />} />
+				<Route path="/upload" render={(props) => <UploadPage {...props} />} />
 				<Redirect from="/" to="/main" />
 			</Switch>
 		</ScrollToTop>

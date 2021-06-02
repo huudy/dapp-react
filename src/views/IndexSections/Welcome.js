@@ -16,33 +16,11 @@
 
 */
 import React from 'react';
-import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 // reactstrap components
-import {
-	Button,
-	Card,
-	CardHeader,
-	CardBody,
-	CardFooter,
-	CardImg,
-	CardTitle,
-	Label,
-	FormGroup,
-	Form,
-	Input,
-	InputGroupAddon,
-	InputGroupText,
-	InputGroup,
-	Container,
-	Row,
-	Col,
-} from 'reactstrap';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 export default function Welcome() {
-	const [fullNameFocus, setFullNameFocus] = React.useState(false);
-	const [emailFocus, setEmailFocus] = React.useState(false);
-	const [passwordFocus, setPasswordFocus] = React.useState(false);
 	return (
 		<div className="section section-signup">
 			<Container>

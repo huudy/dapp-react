@@ -24,9 +24,7 @@ import Footer from 'components/Footer/Footer.js';
 
 // sections for this page/view
 import NucleoIcons from 'views/IndexSections/NucleoIcons.js';
-import Signup from 'views/IndexSections/Signup.js';
 import Examples from 'views/IndexSections/Examples.js';
-import Download from 'views/IndexSections/Download.js';
 import Welcome from './IndexSections/Welcome';
 
 export default function Index() {
