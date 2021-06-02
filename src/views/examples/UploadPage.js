@@ -87,21 +87,21 @@ export default function UploadPage() {
 						<Row className="row-grid justify-content-between align-items-center text-left">
 							<Col lg="6" md="6">
 								<h1 className="text-white">
-									We keep your vote <br />
-									<span className="text-white">secured</span>
+									We keep your stuff <br />
+									<span className="text-white">stored on IPFS</span>
 								</h1>
 								<p className="text-white mb-3">
-									We make sure Your vote will never dissaper nor it will change,
-									or even gets deleted. Most importantly no vote can be fake.
+									We make sure Your personal files are stored in the
+									decentralized manner.
 								</p>
 								<div className="btn-wrapper mb-3">
 									<p className="category text-success d-inline">
-										Choose your candidate right now
+										Choose your file and let's go!
 									</p>
 									<a
 										className="btn-link"
 										color="success"
-										href="#candidates"
+										href="#upload"
 										size="sm"
 									>
 										<i className="tim-icons icon-minimal-right" />
@@ -112,19 +112,19 @@ export default function UploadPage() {
 								<img
 									alt="..."
 									// className="img-fluid"
-									src={require('assets/svg/vote.svg').default}
+									src={require('assets/svg/upload.svg').default}
 								/>
 							</Col>
 						</Row>
 					</div>
 				</div>
-				<section className="section">
+				<section id="upload" className="section">
 					<Container>
 						<Row>
 							<Col md="6">
 								<Card className="card-plain">
 									<CardHeader>
-										<h1 className="profile-title text-left">Contact</h1>
+										<h1 className="profile-title text-left">Upload</h1>
 										<h5 className="text-on-back">03</h5>
 									</CardHeader>
 									<CardBody>

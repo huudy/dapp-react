@@ -53,7 +53,7 @@ export default function Examples() {
 							<img
 								alt="..."
 								className="img-raised"
-								src={require('assets/img/profile-page.png').default}
+								src={require('assets/img/upload-page.png').default}
 							/>
 						</Link>
 						<Button
