@@ -5,7 +5,7 @@ import "hardhat/console.sol";
 
 contract Election {
     struct Candidate {
-        uint256 id;
+        uint32 id;
         string name;
         string desc;
         string work;

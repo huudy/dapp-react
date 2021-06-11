@@ -6,6 +6,7 @@ describe('Election', function () {
 	beforeEach(async () => {
 		Election = await ethers.getContractFactory('Election');
 		election = await Election.deploy();
+		await election.deployed();
 		accounts = await ethers.getSigners();
 	});
 

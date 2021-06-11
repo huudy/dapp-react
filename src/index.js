@@ -18,6 +18,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import '../node_modules/react-notifications-component/dist/scss/notification.scss';
+import ReactNotification from 'react-notifications-component';
 
 import 'assets/css/nucleo-icons.css';
 import 'assets/scss/blk-design-system-react.scss?v=1.2.0';
@@ -30,6 +32,7 @@ import UploadPage from 'views/examples/UploadPage';
 
 ReactDOM.render(
 	<HashRouter>
+		<ReactNotification />
 		<ScrollToTop>
 			<Switch>
 				<Route path="/main" render={(props) => <Index {...props} />} />
