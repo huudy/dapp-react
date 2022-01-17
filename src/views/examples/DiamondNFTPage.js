@@ -35,7 +35,7 @@ import IndexNavbar from 'components/Navbars/IndexNavbar';
 import { ethers } from 'ethers';
 import { store } from 'react-notifications-component';
 import DiamondNFT from '../../artifacts/contracts/DiamondNFT.sol/DiamondNFT.json';
-const electionAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+const address = process.env.REACT_APP_DIAMONDNFT_ADDRESS;
 
 export default function DiamondNFTPage() {
 	const [candidates, setCandidates] = useState([]);
@@ -53,7 +53,6 @@ export default function DiamondNFTPage() {
 
 	useEffect(() => {
 		document.body.classList.toggle('landing-page');
-
 		// Specify how to clean up after this effect:
 		return function cleanup() {
 			document.body.classList.toggle('landing-page');
@@ -76,80 +75,6 @@ export default function DiamondNFTPage() {
 	}
 
 	//candidate that is fetchet from smart contract is an array so we taking out first three items
-	// const buyDiamond = async ()={}
-
-	const fetchCandidates = async () => {
-		if (typeof window.ethereum !== 'undefiend') {
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const contract = new ethers.Contract(
-				electionAddress,
-				Election.abi,
-				provider
-			);
-			try {
-				const count = await contract.candidatesCount();
-				const promises = [...Array(count).keys()].map((i) => {
-					return contract.candidates(++i);
-				});
-				const fetchedCandidates = await Promise.all(promises);
-				fetchedCandidates.forEach((c) => {
-					addCandidate(c);
-				});
-			} catch (err) {
-				handleError(err);
-			}
-		}
-	};
-	const listenForVotes = () => {
-		if (typeof window.ethereum !== 'undefiend') {
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const contract = new ethers.Contract(
-				electionAddress,
-				Election.abi,
-				provider
-			);
-			try {
-				contract.on('votedEvent', (e) => {
-					fetchCandidates();
-					store.addNotification({
-						title: 'News !',
-						message: 'New vote has been just placed',
-						type: 'info',
-						...notification,
-					});
-				});
-			} catch (err) {
-				handleError(err);
-			}
-		}
-	};
-	const vote = async (id) => {
-		if (typeof window.ethereum !== 'undefiend') {
-			// const [account] = await window.ethereum.request({
-			// 	method: 'eth_requestAccounts',
-			// });
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			const signer = provider.getSigner();
-			const contract = new ethers.Contract(
-				electionAddress,
-				Election.abi,
-				signer
-			);
-			try {
-				const transaction = await contract.vote(id, { from: accounts[0] });
-				await transaction.wait();
-
-				store.addNotification({
-					title: 'Success !',
-					message: 'Vote successfully saved',
-					type: 'success',
-					...notification,
-				});
-			} catch (err) {
-				handleError(err);
-			}
-		}
-	};
 
 	const handleError = (error) => {
 		const REVERT = 'revert';
@@ -169,6 +94,30 @@ export default function DiamondNFTPage() {
 		});
 	};
 
+	const mint = async () => {
+		if (typeof window.ethereum !== 'undefiend') {
+			// requestAccount();
+			// const [account] = await window.ethereum.request({
+			// 	method: 'eth_requestAccounts',
+			// });
+			const provider = new ethers.providers.Web3Provider(window.ethereum);
+			const signer = provider.getSigner();
+			const contract = new ethers.Contract(address, DiamondNFT.abi, signer);
+			try {
+				const mintTransaction = await contract.mintTo(accounts[0]);
+				await mintTransaction.wait();
+
+				store.addNotification({
+					title: 'Success !',
+					message: 'Vote successfully saved',
+					type: 'success',
+					...notification,
+				});
+			} catch (err) {
+				handleError(err);
+			}
+		}
+	};
 	return (
 		<>
 			<IndexNavbar />
@@ -257,48 +206,38 @@ export default function DiamondNFTPage() {
 							</Col>
 						</Row>
 						<Row>
-							{candidates.map((i) => {
-								return (
-									<Col key={i.id} md="6">
-										<Card className="card-coin card-plain">
-											<CardHeader>
-												<img
-													alt="..."
-													className="img-fluid rounded-circle shadow-lg"
-													src={require('assets/img/mike.jpg').default}
-													style={{ width: '150px' }}
-												/>
-											</CardHeader>
-											<CardBody>
-												<Row>
-													<Col className="text-center" md="12">
-														<h4 className="text-uppercase">{i.name}</h4>
-														<span>Votes</span>
-														<p>{i.voteCount}</p>
-														<hr className="line-primary" />
-													</Col>
-												</Row>
-												<Row>
-													<ListGroup>
-														<ListGroupItem>{i.desc}</ListGroupItem>
-														<ListGroupItem>{i.work}</ListGroupItem>
-														<ListGroupItem>{i.motto}</ListGroupItem>
-													</ListGroup>
-												</Row>
-											</CardBody>
-											<CardFooter className="text-center">
-												<Button
-													className="btn-simple"
-													color="primary"
-													onClick={() => vote(i.id)}
-												>
-													Vote
-												</Button>
-											</CardFooter>
-										</Card>
-									</Col>
-								);
-							})}
+							<Col md="6">
+								<Card className="card-coin card-plain">
+									<CardHeader>
+										<img
+											alt="..."
+											className="img-fluid rounded-circle shadow-lg"
+											src={require('assets/img/mike.jpg').default}
+											style={{ width: '150px' }}
+										/>
+									</CardHeader>
+									<CardBody>
+										<Row>
+											<Col className="text-center" md="12">
+												<h4 className="text-uppercase">NAMe</h4>
+												<span>Votes</span>
+												<p>38</p>
+												<hr className="line-primary" />
+											</Col>
+										</Row>
+										<Row></Row>
+									</CardBody>
+									<CardFooter className="text-center">
+										<Button
+											className="btn-simple"
+											onClick={() => mint()}
+											color="primary"
+										>
+											MINT DIAMON COIN
+										</Button>
+									</CardFooter>
+								</Card>
+							</Col>
 						</Row>
 					</Container>
 				</section>

@@ -20,7 +20,7 @@ async function main() {
 	await election.deployed();
 
 	console.log('Election deployed to:', election.address);
-	const DiamondNft = await hre.ethers.getContractFactory('DiamondfNFT');
+	const DiamondNft = await hre.ethers.getContractFactory('DiamondNFT');
 	const diamond = await DiamondNft.deploy();
 
 	await diamond.deployed();

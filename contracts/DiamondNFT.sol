@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/PullPayment.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract DiamondfNFT is ERC721, PullPayment, Ownable {
+contract DiamondNFT is ERC721, PullPayment, Ownable {
     using Counters for Counters.Counter;
 
     // Constants
@@ -18,7 +18,7 @@ contract DiamondfNFT is ERC721, PullPayment, Ownable {
     /// @dev Base token URI used as a prefix by tokenURI().
     string public baseTokenURI;
 
-    constructor() ERC721("DiamondfNFT", "DNFT") {
+    constructor() ERC721("DIAMENTY", "DNFT") {
         baseTokenURI = "";
     }
 
