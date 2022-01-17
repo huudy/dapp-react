@@ -20,6 +20,12 @@ async function main() {
 	await election.deployed();
 
 	console.log('Election deployed to:', election.address);
+	const DiamondNft = await hre.ethers.getContractFactory('DiamondfNFT');
+	const diamond = await DiamondNft.deploy();
+
+	await diamond.deployed();
+
+	console.log('DiamondNft deployed to:', diamond.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
