@@ -27,6 +27,7 @@ import 'assets/demo/demo.css';
 
 import Index from 'views/Index.js';
 import VotePage from 'views/examples/VotePage';
+import DiamondNFTPage from 'views/examples/DiamondNFTPage';
 import ScrollToTop from 'react-router-scroll-top';
 import UploadPage from 'views/examples/UploadPage';
 
@@ -37,8 +38,12 @@ ReactDOM.render(
 			<Switch>
 				<Route path="/main" render={(props) => <Index {...props} />} />
 				<Route path="/vote" render={(props) => <VotePage {...props} />} />
+				<Route
+					path="/diamond"
+					render={(props) => <DiamondNFTPage {...props} />}
+				/>
 				<Route path="/upload" render={(props) => <UploadPage {...props} />} />
-				<Redirect from="/" to="/main" />
+				<Redirect from="/" to="/diamond" />
 			</Switch>
 		</ScrollToTop>
 	</HashRouter>,
