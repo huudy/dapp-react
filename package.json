@@ -53,7 +53,9 @@
     "minify-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/blk-design-system-react.scss src/assets/css/blk-design-system-react.min.css --output-style compressed",
     "map-sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/assets/scss/blk-design-system-react.scss src/assets/css/blk-design-system-react.css --source-map true",
     "sctest": "npx hardhat compile && npx hardhat test",
-    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost"
+    "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
+    "pack-docs": "npx ipfs-car --pack docs --output docs.car",
+    "pack-metadata": "npx ipfs-car --pack metadata --output metadata.car"
   },
   "eslintConfig": {
     "extends": [

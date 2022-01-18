@@ -36,7 +36,7 @@ import { ethers } from "ethers";
 import { store } from "react-notifications-component";
 import DiamondNFT from "../../artifacts/contracts/DiamondNFT.sol/DiamondNFT.json";
 const address = process.env.REACT_APP_DIAMONDNFT_ADDRESS;
-
+const ipfsDoc = "bafybeieqru73pway26wrvfbtbk5i7mtjss5oqknmqhtd5kdptww4e5nrqq";
 export default function DiamondNFTPage() {
   const [candidates, setCandidates] = useState([]);
   const [accounts, setAccounts] = useState({});
@@ -100,7 +100,9 @@ export default function DiamondNFTPage() {
       const signer = provider.getSigner();
       const contract = new ethers.Contract(address, DiamondNFT.abi, signer);
       try {
-        const mintTransaction = await contract.mintTo(accounts[0]);
+        const mintTransaction = await contract.mintTo(accounts[0], {
+          value: ethers.utils.parseEther("0.08"),
+        });
         await mintTransaction.wait();
 
         store.addNotification({
