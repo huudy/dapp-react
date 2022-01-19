@@ -39,21 +39,26 @@ contract DiamondNFT is ERC721, PullPayment, Ownable {
     /*
      * Mint reserved NFTs for giveaways, devs, etc.
      */
-    // function reserveMint(uint256 mintCount) public onlyOwner {
-    //     // uint256 supply = totalSupply();
+    function reserveMint(uint256 mintCount) public onlyOwner {
+        uint256 tokenId = currentTokenId.current();
 
-    //     require(
-    //         supply + mintCount <= TOTAL_SUPPLY,
-    //         "max_token_supply_exceeded"
-    //     );
+        require(tokenId < TOTAL_SUPPLY, "Max supply reached");
 
-    //     for (uint256 i = 1; i <= mintCount; i++) {
-    //         _safeMint(msg.sender, supply + i);
-    //     }
-    // }
+        for (uint256 i = 1; i <= mintCount; i++) {
+            currentTokenId.increment();
+            uint256 newItemId = currentTokenId.current();
+            require(tokenId < TOTAL_SUPPLY, "Max supply reached");
+
+            _safeMint(msg.sender, newItemId);
+        }
+    }
 
     /// @dev Returns an URI for a given token ID
     function _baseURI() internal view virtual override returns (string memory) {
+        return baseTokenURI;
+    }
+
+    function getBaseTokenURI() public view returns (string memory) {
         return baseTokenURI;
     }
 

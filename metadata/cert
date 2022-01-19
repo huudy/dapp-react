@@ -1,17 +1,18 @@
 {
-   "attributes" : [
-      {
-         "trait_type" : "value in PLN",
-         "value" : 1
-      },
-      {
-         "display_type" : "number",
-         "trait_type" : "purity",
-         "value" : 100
-      }
-   ],
-   "description" : "THis is the first dimond brought to Poland from Africa.",
-   "external_url" : "https://example.com/?token_id=2",
-   "image" : "https://storage.googleapis.com/opensea-prod.appspot.com/creature/2.png",
-   "name" : "Boris McCoy"
+  "attributes": [
+    {
+      "trait_type": "value in PLN",
+      "value": 1
+    },
+    {
+      "display_type": "number",
+      "trait_type": "purity",
+      "value": 100
+    }
+  ],
+  "description": "This is the first dimond brought to Poland from Africa.",
+  "external_url": "https://example.com/?token_id=2",
+  "image": "https://storage.googleapis.com/opensea-prod.appspot.com/creature/2.png",
+  "name": "Jubiler",
+  "certificate": "https://bafybeieqru73pway26wrvfbtbk5i7mtjss5oqknmqhtd5kdptww4e5nrqq.ipfs.dweb.link/docs/cert.pdf"
 }

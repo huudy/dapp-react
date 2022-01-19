@@ -11,6 +11,10 @@ Blk• Design  System React will help you create a clean and simple website that
 - Copyright 2020 Creative Tim (https://www.creative-tim.com/?ref=blkdsr-readme)
 
 - Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
+### How to setup
+
+- Trying my skills in smart contracts to add hardhat environment so my little app can connect to blockchain 'npx hardhat'
+
 ### Just getting started with Ethereum
 
 - Trying my skills in smart contracts to add hardhat environment so my little app can connect to blockchain 'npx hardhat'

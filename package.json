@@ -55,7 +55,8 @@
     "sctest": "npx hardhat compile && npx hardhat test",
     "deploy:local": "npx hardhat run scripts/deploy.js --network localhost",
     "pack-docs": "npx ipfs-car --pack docs --output docs.car",
-    "pack-metadata": "npx ipfs-car --pack metadata --output metadata.car"
+    "pack-metadata": "npx ipfs-car --pack metadata --output metadata.car",
+    "nodes": "npx hardhat node"
   },
   "eslintConfig": {
     "extends": [
